@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            function showHint(str) {
+                if (str.length == 0) { 
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                } else {
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("txtHint").innerHTML = this.responseText;
+                        }
+                    };
+                    xhr.open("GET", "hint.php?q=" + str, true);
+                    xhr.send();
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p><b>Commencez à entrer un prénom ci-dessous :</b></p>
+        <p>Prénom : <input type="text" autocomplete="off" onkeyup="showHint(this.value)"></p>
+        <p>Suggestions : <span id="txtHint"></span></p>
+    </body>
+</html>
