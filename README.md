@@ -11,6 +11,6 @@ TP4 : AJAX
 
 TP5 : Génération dynamique de documents (images, PDF, etc.)
 
-TP6 : Frameworks PHP (Symfony, Laravel, etc.)
+TP6 : Introduction aux Frameworks PHP (exemple de CodeIgniter V3)
 
 TP7 : Sécurité des applications Web
